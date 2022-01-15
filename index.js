@@ -13,17 +13,17 @@ function box(){
     var b = now.getMinutes();
     var c = now.getSeconds();
 
-    a = a % 12;
+   
     var d = a >= 12 ? 'am' : 'pm';
 
-    hours.innerHTML=a;
+    hours.innerHTML=a%12;
     minutes.innerHTML= (b < 10) ? `0${b}` : b;
     seconds.innerHTML= (c < 10) ? `0${c}` : c;
     ampm.innerHTML=d;
 
     var milliSeconds = now.getMilliseconds();
     
-    if(wakeUpTime !== null && wakeUpTimeFlag === false && wakeUpTime%12 == a) {
+    if(wakeUpTime !== null && wakeUpTimeFlag === false && wakeUpTime == a) {
         wakeUpTimeFlag = true;
         document.getElementById("image").style.backgroundImage="url(./wakeup_image.png)";
         document.getElementById("downimagetext").innerHTML="Good Morning";
@@ -34,7 +34,7 @@ function box(){
         
     }
 
-   if(napTime !== null && napTimeFlag === false && napTime%12 == a) {
+   if(napTime !== null && napTimeFlag === false && napTime == a) {
         napTimeFlag = true;
         document.getElementById("image").style.backgroundImage="url(./goodnight_image.png)";
         document.getElementById("downimagetext").innerHTML="Good Night";
@@ -46,7 +46,7 @@ function box(){
         }, resetTime)
     } 
 
-    if(lunchTime !== null && lunchTimeFlag === false && lunchTime%12 == a) {
+    if(lunchTime !== null && lunchTimeFlag === false && lunchTime == a) {
         lunchTimeFlag = true;
         document.getElementById("image").style.backgroundImage="url(./lunch_image.png)";
         document.getElementById("downimagetext").innerHTML="Good Afternoon ";
