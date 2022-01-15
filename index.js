@@ -16,7 +16,7 @@ function box(){
    
     var d = a < 12 ? 'am' : 'pm';
 
-    hours.innerHTML=a%12;
+    hours.innerHTML=(a%12 < 10) ? `0${a%12}` : a%12;
     minutes.innerHTML= (b < 10) ? `0${b}` : b;
     seconds.innerHTML= (c < 10) ? `0${c}` : c;
     ampm.innerHTML=d;
