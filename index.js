@@ -14,7 +14,7 @@ function box(){
     var c = now.getSeconds();
 
    
-    var d = a >= 12 ? 'am' : 'pm';
+    var d = a < 12 ? 'am' : 'pm';
 
     hours.innerHTML=a%12;
     minutes.innerHTML= (b < 10) ? `0${b}` : b;
